@@ -1,3 +1,5 @@
+{% from "bootstrap/form.html" import render_form %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flask-ML Application</title>
+    {% block style %}
+    {{ bootstrap.load_css() }}
+    {% endblock %}
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <div class="form-group mt-5">
+                <input class="form-control-file" type="file" name="file" />
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+            </div>
+        </form>
+    </div>
+    {% block script %}
+    {{ bootstrap.load_js() }}
+    {% endblock %}
 </body>
 </html>

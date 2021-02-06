@@ -1,10 +1,25 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
+
+from config import Config
 
 
-def creat_app():
+bootstrap = Bootstrap()
+
+def creat_app(config_class=Config):
     app = Flask(__name__)
+    app.config.from_object(config_class)
+    app.app_context().push()
+
+    bootstrap.init_app(app)
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
-    
+
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
+    from app.database import bp as db_bp
+    app.register_blueprint(db_bp)
+
     return app
