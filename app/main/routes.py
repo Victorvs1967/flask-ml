@@ -18,7 +18,6 @@ from app.database import collection as db
 ssl._create_default_https_context = ssl._create_unverified_context
 
 model = ResNet50(weights='imagenet')
-# model._make_predict_function()
 
 @bp.route('/')
 def home():

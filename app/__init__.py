@@ -7,6 +7,7 @@ from config import Config
 bootstrap = Bootstrap()
 
 def creat_app(config_class=Config):
+    
     app = Flask(__name__)
     app.config.from_object(config_class)
     app.app_context().push()
@@ -18,8 +19,5 @@ def creat_app(config_class=Config):
 
     from app.api import bp as api_bp
     app.register_blueprint(api_bp, url_prefix='/api')
-
-    from app.database import bp as db_bp
-    app.register_blueprint(db_bp)
 
     return app

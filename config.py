@@ -9,4 +9,4 @@ class Config(object):
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
     DATABASE_URL = os.environ.get('DATABASE_URL') or 'mongodb://localhost:27017'
-    UPLOAD_URL = 'static'
+    UPLOAD_URL = 'static/'
