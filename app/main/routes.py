@@ -19,7 +19,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 model = ResNet50(weights='imagenet')
 
-@bp.route('/')
+@bp.route('/index')
 def home():
     return render_template('index.html')
 
