@@ -17,6 +17,14 @@ const App = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <a
+          className="App-link"
+          href="/api/index"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Go to API
+        </a>
       </header>
         <table style={{padding: "20px"}}>
           <tbody>

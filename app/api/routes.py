@@ -10,8 +10,3 @@ from app.api import bp
 @cross_origin()
 def api():
     return dumps(db.getAllImages())
-
-@bp.route('/index')
-@cross_origin()
-def index():
-    return redirect(url_for('main.index'))
