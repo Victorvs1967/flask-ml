@@ -33,7 +33,7 @@ const App = () => {
           Go to API
         </a>
       </header>
-        <table border="1" style={{margin: "auto", marginTop: 20}}>
+        <table border="1" frame="void" rules="rows" style={{margin: "auto", marginTop: 20}}>
           <thead style={ tableStyle }>
             <tr>
               <td style={{padding: 8}}><strong>IMAGE NAME</strong></td>
