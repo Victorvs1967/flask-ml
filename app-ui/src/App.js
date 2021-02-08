@@ -12,10 +12,11 @@ const App = () => {
   }, [])
 
   const tableStyle = {textAlign: "left", marginLeft: '10px'};
-  const tableBody = allImages.map(item => <tr style={ tableStyle } key={item._id.$oid}>
-                                            <td>{ item.file_name }</td>
-                                            <td style={{paddingLeft: 30}}>{ item.prediction }</td>
-                                          </tr>);
+  const tableBody = allImages.map(
+        item => <tr style={ tableStyle } key={item._id.$oid}>
+                  <td>{ item.file_name }</td>
+                  <td style={{paddingLeft: 30}}>{ item.prediction }</td>
+                </tr>);
 
   return (
     <div className="App">
@@ -33,6 +34,12 @@ const App = () => {
         </a>
       </header>
         <table style={{margin: "auto", marginTop: 20}}>
+          <thead>
+            <tr>
+              <td><strong>IMAGE NAME</strong></td>
+              <td><strong>PREDICTION</strong></td>
+            </tr>
+          </thead>
           <tbody>{ tableBody }</tbody>
         </table>
     </div>
