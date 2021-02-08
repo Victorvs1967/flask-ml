@@ -14,8 +14,8 @@ const App = () => {
   const tableStyle = {textAlign: "left", marginLeft: '10px'};
   const tableBody = allImages.map(
         item => <tr style={ tableStyle } key={item._id.$oid}>
-                  <td>{ item.file_name }</td>
-                  <td style={{paddingLeft: 30}}>{ item.prediction }</td>
+                  <td style={{padding: 8}}>{ item.file_name }</td>
+                  <td style={{paddingLeft: 10}}>{ item.prediction }</td>
                 </tr>);
 
   return (
@@ -33,11 +33,11 @@ const App = () => {
           Go to API
         </a>
       </header>
-        <table style={{margin: "auto", marginTop: 20}}>
-          <thead>
+        <table border="1" style={{margin: "auto", marginTop: 20}}>
+          <thead style={ tableStyle }>
             <tr>
-              <td><strong>IMAGE NAME</strong></td>
-              <td><strong>PREDICTION</strong></td>
+              <td style={{padding: 8}}><strong>IMAGE NAME</strong></td>
+              <td style={{padding: 8}}><strong>PREDICTION</strong></td>
             </tr>
           </thead>
           <tbody>{ tableBody }</tbody>
