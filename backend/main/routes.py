@@ -11,8 +11,8 @@ from keras.preprocessing.image import img_to_array
 from keras.applications.resnet50 import ResNet50, decode_predictions, preprocess_input
 from flask import render_template, request, jsonify, current_app
 
-from app.main import bp
-from app.database import collection as db
+from backend.main import bp
+from backend.database import collection as db
 
 
 ssl._create_default_https_context = ssl._create_unverified_context

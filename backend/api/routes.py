@@ -2,8 +2,8 @@ from bson.json_util import dumps
 from flask import redirect, url_for
 from flask_cors import cross_origin
 
-from app.database import collection as db
-from app.api import bp
+from backend.database import collection as db
+from backend.api import bp
 
 
 @bp.route('/')
