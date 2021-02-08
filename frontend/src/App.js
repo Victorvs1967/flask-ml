@@ -21,27 +21,22 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="/api/index"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go to API
-        </a>
-      </header>
-        <table border="1" frame="void" rules="rows" style={{margin: "auto", marginTop: 20}}>
-          <thead style={ tableStyle }>
-            <tr>
-              <td style={{padding: 8}}><strong>IMAGE NAME</strong></td>
-              <td style={{padding: 8}}><strong>PREDICTION</strong></td>
-            </tr>
-          </thead>
-          <tbody>{ tableBody }</tbody>
-        </table>
+        <form action="/predict" method="POST" encType="multipart/form-data">
+          <div className="form-group mt-5">
+            <input className="form-control-file" type="file" name="file" />
+            <button type="submit" className="btn btn-primary mt-2">Submit</button>
+          </div>
+        </form>
+    </header>
+      <table border="1" frame="void" rules="rows" style={{margin: "auto", marginTop: 20}}>
+        <thead style={ tableStyle }>
+          <tr>
+            <td style={{padding: 8}}><strong>IMAGE NAME</strong></td>
+            <td style={{padding: 8}}><strong>PREDICTION</strong></td>
+          </tr>
+        </thead>
+        <tbody>{ tableBody }</tbody>
+      </table>
     </div>
   );
 };

@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image as img
 from keras.preprocessing.image import img_to_array
 from keras.applications.resnet50 import ResNet50, decode_predictions, preprocess_input
-from flask import render_template, request, jsonify, current_app
+from flask import render_template, request, jsonify, current_app, redirect, url_for
 
 from backend.main import bp
 from backend.database import collection as db
@@ -32,7 +32,7 @@ def predict():
         if user_file.filename == '':
             return 'filename not found...'
         else:
-            path = os.path.join(f'{os.getcwd()}/app/static/{user_file.filename}')
+            path = os.path.join(f'{os.getcwd()}/backend/static/{user_file.filename}')
             user_file.save(path)
             classes = idetifyImage(path)
             db.addNewImage(
